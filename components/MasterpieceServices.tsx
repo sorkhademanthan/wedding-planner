@@ -118,10 +118,10 @@ export default function MasterpieceServices() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gold/30 bg-champagne/30 backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border-[1.5px] border-gold/35 bg-gradient-to-r from-champagne/40 to-romance/30 backdrop-blur-md shadow-sm mb-6"
           >
-            <div className="w-2 h-2 rounded-full bg-coral animate-pulse" />
-            <span className="text-xs tracking-[0.25em] uppercase text-charcoal/70 font-light">
+            <div className="w-2 h-2 rounded-full bg-coral shadow-[0_0_8px_rgba(255,127,80,0.5)] animate-pulse" />
+            <span className="text-[11px] tracking-[0.28em] uppercase text-charcoal/70 font-medium">
               Crafted for Your Love Story
             </span>
           </motion.div>
@@ -154,7 +154,7 @@ export default function MasterpieceServices() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-base sm:text-lg text-charcoal/65 max-w-3xl mx-auto leading-[1.7] tracking-[0.01em]"
+            className="text-[15px] sm:text-base text-charcoal/60 max-w-3xl mx-auto leading-[1.75] tracking-[0.012em]"
           >
             Every wedding we plan starts with a story—yours. Choose the journey that 
             fits your vision, and we&rsquo;ll transform it into an unforgettable celebration.
@@ -185,20 +185,20 @@ export default function MasterpieceServices() {
           transition={{ delay: 1, duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-6 px-10 py-7 bg-gradient-to-br from-champagne/40 via-romance/30 to-blush/40 rounded-lg backdrop-blur-sm border-[1.5px] border-gold/25">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6 px-10 py-7 bg-gradient-to-br from-champagne/50 via-romance/35 to-blush/45 rounded-xl backdrop-blur-md border-[1.5px] border-gold/30 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
             <div className="text-left">
-              <p className="text-[13px] text-charcoal/55 mb-2 tracking-wide">Not sure which journey fits yours?</p>
-              <p className="text-lg font-semibold text-charcoal tracking-[-0.01em]">Let&rsquo;s find the perfect match together</p>
+              <p className="text-[12px] text-charcoal/50 mb-2 tracking-wide font-medium">Not sure which journey fits yours?</p>
+              <p className="text-base sm:text-lg font-bold text-charcoal tracking-[-0.01em]">Let&rsquo;s find the perfect match together</p>
             </div>
             <Link 
               href="/services"
-              className="group relative inline-flex items-center gap-2.5 px-8 py-[15px] bg-gradient-to-r from-gold via-coral to-gold hover:shadow-[0_0_30px_rgba(212,175,55,0.35)] transition-all duration-500 hover:scale-[1.03] active:scale-[0.98]"
+              className="group relative inline-flex items-center gap-2.5 px-8 py-[14px] rounded-md bg-gradient-to-r from-gold via-coral to-gold hover:shadow-[0_6px_24px_rgba(212,175,55,0.3)] transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"
             >
-              <span className="relative text-ivory text-[13px] tracking-[0.12em] uppercase font-semibold">
+              <span className="relative text-ivory text-[12.5px] tracking-[0.14em] uppercase font-bold">
                 Compare Services
               </span>
               <svg 
-                className="w-[15px] h-[15px] text-ivory transition-transform duration-300 group-hover:translate-x-1" 
+                className="w-[14px] h-[14px] text-ivory transition-transform duration-300 group-hover:translate-x-1" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -211,58 +211,58 @@ export default function MasterpieceServices() {
 
           {/* Trust Indicators with Animation */}
           <motion.div 
-            className="flex flex-wrap justify-center items-center gap-10 sm:gap-14 pt-10 border-t border-charcoal/10"
+            className="flex flex-wrap justify-center items-center gap-12 sm:gap-16 pt-10 border-t border-charcoal/8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
             <motion.div 
               className="text-center group cursor-pointer"
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.03, y: -2 }}
               transition={{ duration: 0.3 }}
             >
               <motion.p 
-                className="text-3xl sm:text-4xl font-serif text-gold mb-1.5 tracking-[-0.02em]"
+                className="text-4xl sm:text-5xl font-serif text-gold mb-2 tracking-[-0.025em]"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 1.3, duration: 0.6, ease: "backOut" }}
               >
                 200+
               </motion.p>
-              <p className="text-[13px] text-charcoal/55 group-hover:text-charcoal transition-colors tracking-wide">
+              <p className="text-[12px] text-charcoal/50 group-hover:text-charcoal/70 transition-colors tracking-[0.05em] font-medium">
                 Celebrations Created
               </p>
             </motion.div>
             
-            <div className="h-14 w-px bg-gradient-to-b from-transparent via-gold/25 to-transparent" />
+            <div className="h-16 w-[1.5px] bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
             
             <motion.div 
               className="text-center group cursor-pointer"
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.03, y: -2 }}
               transition={{ duration: 0.3 }}
             >
               <motion.p 
-                className="text-3xl sm:text-4xl font-serif text-coral mb-1.5 tracking-[-0.02em]"
+                className="text-4xl sm:text-5xl font-serif text-coral mb-2 tracking-[-0.025em]"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 1.4, duration: 0.6, ease: "backOut" }}
               >
                 10+
               </motion.p>
-              <p className="text-[13px] text-charcoal/55 group-hover:text-charcoal transition-colors tracking-wide">
+              <p className="text-[12px] text-charcoal/50 group-hover:text-charcoal/70 transition-colors tracking-[0.05em] font-medium">
                 Years of Expertise
               </p>
             </motion.div>
             
-            <div className="h-14 w-px bg-gradient-to-b from-transparent via-coral/25 to-transparent" />
+            <div className="h-16 w-[1.5px] bg-gradient-to-b from-transparent via-coral/20 to-transparent" />
             
             <motion.div 
               className="text-center group cursor-pointer"
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.03, y: -2 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div 
-                className="flex items-center justify-center gap-1 mb-2"
+                className="flex items-center justify-center gap-1 mb-2.5"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 1.5, duration: 0.6 }}
@@ -270,7 +270,7 @@ export default function MasterpieceServices() {
                 {[...Array(5)].map((_, i) => (
                   <motion.svg 
                     key={i} 
-                    className="w-[17px] h-[17px] text-gold fill-current" 
+                    className="w-[16px] h-[16px] text-gold fill-current drop-shadow-[0_1px_3px_rgba(212,175,55,0.25)]" 
                     viewBox="0 0 20 20"
                     initial={{ opacity: 0, scale: 0, rotate: -180 }}
                     animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
@@ -280,7 +280,7 @@ export default function MasterpieceServices() {
                   </motion.svg>
                 ))}
               </motion.div>
-              <p className="text-[13px] text-charcoal/55 group-hover:text-charcoal transition-colors tracking-wide">
+              <p className="text-[12px] text-charcoal/50 group-hover:text-charcoal/70 transition-colors tracking-[0.05em] font-medium">
                 150+ Five-Star Reviews
               </p>
             </motion.div>
@@ -383,13 +383,13 @@ function ServiceCard({
       onMouseLeave={handleMouseLeave}
       onClick={onSelect}
       className={`
-        group relative p-9 rounded-xl border-[1.5px] transition-all duration-500 cursor-pointer overflow-hidden
+        group relative p-10 rounded-2xl border-[1.5px] transition-all duration-500 cursor-pointer overflow-hidden
         ${service.popular 
-          ? 'border-gold/70 bg-gradient-to-br from-gold/10 via-champagne/30 to-romance/20 shadow-2xl' 
-          : 'border-charcoal/10 bg-gradient-to-br from-ivory to-champagne/30 hover:border-gold/60 hover:shadow-xl'
+          ? 'border-gold/60 bg-gradient-to-br from-gold/8 via-champagne/25 to-romance/15 shadow-[0_8px_30px_rgba(212,175,55,0.12)]' 
+          : 'border-charcoal/8 bg-gradient-to-br from-ivory to-champagne/25 hover:border-gold/50 hover:shadow-[0_6px_20px_rgba(0,0,0,0.06)]'
         }
-        ${isHovered ? 'scale-[1.015] -translate-y-1' : 'scale-100'}
-        ${isSelected ? 'ring-2 ring-gold/60 ring-offset-4 ring-offset-ivory' : ''}
+        ${isHovered ? 'scale-[1.01] -translate-y-1' : 'scale-100'}
+        ${isSelected ? 'ring-2 ring-gold/50 ring-offset-4 ring-offset-ivory' : ''}
       `}
     >
       {/* Dynamic spotlight effect */}
@@ -404,54 +404,54 @@ function ServiceCard({
       {/* Popular Badge */}
       {service.popular && (
         <motion.div
-          initial={{ opacity: 0, y: -20, rotate: -12 }}
-          animate={isInView ? { opacity: 1, y: 0, rotate: -12 } : {}}
-          transition={{ delay: 0.8 + index * 0.15, duration: 0.6 }}
-          className="absolute -top-4 -right-4 px-4 py-2 bg-gradient-to-r from-coral via-gold to-coral rounded-full shadow-lg"
+          initial={{ opacity: 0, scale: 0.8, rotate: -12 }}
+          animate={isInView ? { opacity: 1, scale: 1, rotate: -12 } : {}}
+          transition={{ delay: 0.8 + index * 0.15, duration: 0.6, ease: "backOut" }}
+          className="absolute -top-3 -right-3 px-4 py-2 bg-gradient-to-r from-coral via-gold to-coral rounded-full shadow-[0_4px_12px_rgba(212,175,55,0.4)]"
         >
-          <span className="text-xs font-semibold text-ivory tracking-wider uppercase">
+          <span className="text-[10px] font-bold text-ivory tracking-[0.15em] uppercase drop-shadow-sm">
             Most Popular
           </span>
         </motion.div>
       )}
 
       {/* Card Header with Depth */}
-      <div className="mb-7 relative" style={{ transform: "translateZ(20px)" }}>
+      <div className="mb-8 relative" style={{ transform: "translateZ(20px)" }}>
         <motion.div 
-          className="text-5xl mb-5 inline-block"
-          animate={isHovered ? { scale: 1.2, rotate: 8 } : { scale: 1, rotate: 0 }}
+          className="text-5xl mb-6 inline-block"
+          animate={isHovered ? { scale: 1.15, rotate: 6 } : { scale: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           {service.icon}
         </motion.div>
         
-        <h3 className="text-2xl sm:text-3xl font-serif text-charcoal mb-2.5 tracking-[-0.01em] group-hover:text-gold transition-colors duration-300">
+        <h3 className="text-2xl sm:text-3xl font-serif text-charcoal mb-3 tracking-[-0.015em] leading-tight group-hover:text-gold transition-colors duration-300">
           {service.title}
         </h3>
         
         <div className="flex items-center gap-3 mb-5">
-          <p className="text-[13px] text-charcoal/55 italic tracking-wide">
+          <p className="text-[12px] text-charcoal/50 italic tracking-[0.02em] font-medium">
             {service.subtitle}
           </p>
-          <div className="flex-1 h-px bg-gradient-to-r from-gold/25 to-transparent" />
+          <div className="flex-1 h-[1px] bg-gradient-to-r from-gold/20 to-transparent" />
         </div>
 
-        <p className="text-[15px] text-charcoal/65 leading-[1.7] mb-6 tracking-[0.01em]">
+        <p className="text-[14px] text-charcoal/60 leading-[1.75] mb-6 tracking-[0.012em]">
           {service.description}
         </p>
 
         {/* Highlight Tag with Glow */}
         <motion.div 
-          className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-gradient-to-r ${service.gradient} border border-gold/25 shadow-sm`}
-          whileHover={{ scale: 1.04, boxShadow: "0 0 20px rgba(212,175,55,0.25)" }}
+          className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r ${service.gradient} border-[1.5px] border-gold/30 shadow-sm`}
+          whileHover={{ scale: 1.03, boxShadow: "0 4px 16px rgba(212,175,55,0.2)" }}
           transition={{ duration: 0.2 }}
         >
           <motion.div 
-            className="w-1.5 h-1.5 rounded-full bg-gold"
-            animate={{ scale: [1, 1.3, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_6px_rgba(212,175,55,0.6)]"
+            animate={{ scale: [1, 1.4, 1] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           />
-          <span className="text-[11px] text-charcoal/70 font-semibold uppercase tracking-wider">
+          <span className="text-[10px] text-charcoal/65 font-bold uppercase tracking-[0.12em]">
             {service.highlight}
           </span>
         </motion.div>
@@ -514,11 +514,11 @@ function ServiceCard({
       </div>
 
       {/* Pricing & CTA */}
-      <div className="pt-7 border-t border-charcoal/10">
+      <div className="pt-7 border-t border-charcoal/6">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-[11px] text-charcoal/45 mb-1.5 uppercase tracking-wider font-medium">Investment</p>
-            <p className="text-2xl font-serif text-charcoal tracking-[-0.01em]">
+            <p className="text-[10px] text-charcoal/40 mb-2 uppercase tracking-[0.12em] font-bold">Investment</p>
+            <p className="text-2xl font-serif text-charcoal tracking-[-0.015em] leading-none">
               {service.pricing}
             </p>
           </div>
@@ -526,16 +526,16 @@ function ServiceCard({
             href={`/services/${service.id}`}
             onClick={(e) => e.stopPropagation()}
             className={`
-              group/btn inline-flex items-center gap-2 px-5 py-2.5 rounded transition-all duration-300
+              group/btn inline-flex items-center gap-2 px-6 py-2.5 rounded-md transition-all duration-300
               ${service.popular
-                ? 'bg-gradient-to-r from-gold via-coral to-gold text-ivory hover:shadow-lg hover:scale-[1.03] active:scale-[0.98]'
-                : 'border-[1.5px] border-charcoal/20 text-charcoal hover:border-gold/60 hover:bg-champagne/40 active:scale-[0.98]'
+                ? 'bg-gradient-to-r from-gold via-coral to-gold text-ivory hover:shadow-[0_4px_16px_rgba(212,175,55,0.3)] hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0'
+                : 'border-[1.5px] border-charcoal/15 text-charcoal hover:border-gold/70 hover:bg-champagne/50 hover:shadow-sm active:scale-[0.98]'
               }
             `}
           >
-            <span className="text-[13px] font-semibold tracking-wide">Learn More</span>
+            <span className="text-[12px] font-bold tracking-[0.05em]">Learn More</span>
             <svg 
-              className="w-[15px] h-[15px] transition-transform duration-300 group-hover/btn:translate-x-1" 
+              className="w-[13px] h-[13px] transition-transform duration-300 group-hover/btn:translate-x-1" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"

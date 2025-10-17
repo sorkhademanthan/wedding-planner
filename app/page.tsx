@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import AwardWinningHero from "@/components/AwardWinningHero";
 import MasterpieceServices from "@/components/MasterpieceServices";
+import LuxuryPortfolio from "@/components/LuxuryPortfolio";
 import Button from "@/components/Button";
 import TestimonialCard from "@/components/TestimonialCard";
-import PortfolioCard from "@/components/PortfolioCard";
 
 export default function Home() {
   return (
@@ -16,97 +16,8 @@ export default function Home() {
       {/* Masterpiece Services Section - Created by Claude Sonnet 4.5 */}
       <MasterpieceServices />
 
-      {/* Featured Wedding Section - Cascade timing */}
-      <section className="py-24 px-8 bg-gradient-to-b from-ivory to-romance/20" aria-labelledby="portfolio-heading">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="text-center mb-20"
-          >
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="font-script text-4xl text-gold mb-6"
-              aria-hidden="true"
-            >
-              Real Weddings
-            </motion.p>
-            
-            <motion.h2 
-              id="portfolio-heading"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="font-serif text-6xl md:text-7xl text-charcoal mb-8"
-            >
-              Love Stories We've Crafted
-            </motion.h2>
-            
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-xl text-charcoal/70 max-w-2xl mx-auto leading-relaxed"
-            >
-              Each wedding is unique. Browse our portfolio for inspiration.
-            </motion.p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
-            {[
-              {
-                slug: "sarah-james-garden-romance",
-                title: "Sarah & James",
-                subtitle: "A Garden Romance",
-                category: "Garden Wedding",
-              },
-              {
-                slug: "emma-michael-rustic-barn",
-                title: "Emma & Michael",
-                subtitle: "Rustic Elegance",
-                category: "Barn Wedding",
-              },
-              {
-                slug: "olivia-ryan-beach-bliss",
-                title: "Olivia & Ryan",
-                subtitle: "Coastal Dreams",
-                category: "Beach Wedding",
-              }
-            ].map((wedding, index) => (
-              <motion.div
-                key={wedding.slug}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  delay: index * 0.15, 
-                  duration: 0.8,
-                  ease: [0.4, 0, 0.2, 1]
-                }}
-              >
-                <PortfolioCard {...wedding} />
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            <Button href="/portfolio" variant="outline">View All Weddings</Button>
-          </motion.div>
-        </div>
-      </section>
+      {/* Luxury Portfolio Section - Museum-Quality Editorial Design */}
+      <LuxuryPortfolio />
 
       {/* Trust Signals Section - Build credibility */}
       <section className="py-24 px-8 bg-champagne/30" aria-label="Trust indicators">
@@ -168,7 +79,7 @@ export default function Home() {
           >
             <span className="text-sm text-charcoal tracking-wider">Featured in The Knot</span>
             <span className="text-charcoal/30">•</span>
-            <span className="text-sm text-charcoal tracking-wider">WeddingWire Couples' Choice</span>
+            <span className="text-sm text-charcoal tracking-wider">WeddingWire Couples&apos; Choice</span>
             <span className="text-charcoal/30">•</span>
             <span className="text-sm text-charcoal tracking-wider">Certified Wedding Planner</span>
           </motion.div>
@@ -208,33 +119,47 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section - Strong conversion flow */}
-      <section className="py-32 px-8 bg-gradient-to-br from-romance via-champagne to-blush" aria-labelledby="cta-heading">
+      <section className="relative py-24 sm:py-32 px-6 sm:px-8 bg-gradient-to-br from-romance via-champagne to-blush overflow-hidden" aria-labelledby="cta-heading">
+        {/* Decorative elements */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gold/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-coral/10 rounded-full blur-3xl" />
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-          className="max-w-4xl mx-auto text-center"
+          className="relative max-w-4xl mx-auto text-center"
         >
-          <h2 id="cta-heading" className="font-serif text-5xl md:text-7xl text-charcoal mb-8 leading-tight">
-            Turning Love Into<br />An Experience You'll Replay Forever
+          <h2 id="cta-heading" className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-charcoal mb-6 sm:mb-8 leading-tight px-4">
+            Turning Love Into<br />An Experience You&apos;ll Replay Forever
           </h2>
-          <p className="text-2xl text-charcoal/70 mb-6 leading-relaxed max-w-2xl mx-auto">
-            Your wedding should feel effortless.
-          </p>
-          <p className="text-xl text-charcoal/60 mb-12 leading-relaxed max-w-2xl mx-auto">
-            Let's meet. Share your dreams. We'll show you how we bring them to life.
-          </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-            <Button href="/contact">Start Planning</Button>
-            <span className="text-charcoal/40 hidden sm:inline">or</span>
-            <Button href="/portfolio" variant="outline">See Our Work</Button>
+          <div className="space-y-4 mb-10 sm:mb-12 px-4">
+            <p className="text-xl sm:text-2xl text-charcoal/70 leading-relaxed max-w-2xl mx-auto">
+              Your wedding should feel effortless.
+            </p>
+            <p className="text-base sm:text-xl text-charcoal/60 leading-relaxed max-w-2xl mx-auto">
+              Let&apos;s meet. Share your dreams. We&apos;ll show you how we bring them to life.
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-4 items-center mb-10 sm:mb-12">
+            <Button href="/contact" className="w-full sm:w-auto">Start Planning</Button>
+            <span className="text-charcoal/40 text-sm hidden sm:inline">or</span>
+            <Button href="/portfolio" variant="outline" className="w-full sm:w-auto">See Our Work</Button>
           </div>
 
-          <p className="text-sm text-charcoal/50 mt-12">
-            We can't wait to meet you 💌
-          </p>
+          <motion.p 
+            className="text-sm sm:text-base text-charcoal/50 flex items-center justify-center gap-2"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <span>We can&apos;t wait to meet you</span>
+            <span className="text-lg">💌</span>
+          </motion.p>
         </motion.div>
       </section>
     </main>
