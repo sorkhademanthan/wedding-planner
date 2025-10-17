@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --romance: #F8E8E8;
+  --blush: #E8D5D5;
+  --champagne: #F5E8D8;
+  --ivory: #FAF7F2;
+  --sage: #C8D5C8;
+  --gold: #D4AF37;
+  --coral: #E8A59C;
+  --charcoal: rgba(30, 30, 30, 0.9);
+  
+  /* 8px spacing system */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-15: 120px;
+  --space-20: 160px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-romance: var(--romance);
+  --color-blush: var(--blush);
+  --color-champagne: var(--champagne);
+  --color-ivory: var(--ivory);
+  --color-sage: var(--sage);
+  --color-gold: var(--gold);
+  --color-coral: var(--coral);
+  --color-charcoal: var(--charcoal);
+  
+  --font-sans: var(--font-poppins);
+  --font-serif: var(--font-playfair);
+  --font-script: var(--font-great-vibes);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  --shadow-soft: 0 4px 20px rgba(28, 28, 28, 0.06);
+  --shadow-medium: 0 8px 30px rgba(28, 28, 28, 0.08);
+  --shadow-large: 0 12px 40px rgba(28, 28, 28, 0.1);
+  
+  /* Cinematic animation timings */
+  --timing-instant: 150ms;
+  --timing-feedback: 300ms;
+  --timing-transition: 600ms;
+  --timing-cinematic: 800ms;
+  
+  /* Master easing curves */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-gentle: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--blush);
+  color: var(--charcoal);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* Skip to main content for screen readers */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem;
+  background: var(--charcoal);
+  color: var(--ivory);
+  text-decoration: none;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1rem;
 }
