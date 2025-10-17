@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface HeroProps {
@@ -9,6 +9,7 @@ interface HeroProps {
   description?: string;
   children?: ReactNode;
   backgroundGradient?: string;
+  minHeight?: string;
 }
 
 export default function Hero({
@@ -16,32 +17,61 @@ export default function Hero({
   subtitle,
   description,
   children,
-  backgroundGradient = "from-romance via-champagne to-blush"
+  backgroundGradient = "from-romance via-champagne to-blush",
+  minHeight = "min-h-[70vh]"
 }: HeroProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
-      <div className={`absolute inset-0 bg-gradient-to-br ${backgroundGradient} opacity-40`} />
+    <section 
+      className={`relative ${minHeight} flex items-center justify-center overflow-hidden pt-20`}
+      aria-label="Page hero section"
+      role="banner"
+    >
+      <div 
+        className={`absolute inset-0 bg-gradient-to-br ${backgroundGradient} opacity-40`}
+        aria-hidden="true"
+      />
       
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={!prefersReducedMotion ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-        className="relative z-10 text-center px-6 max-w-4xl"
+        transition={{ duration: prefersReducedMotion ? 0 : 0.8, ease: [0.4, 0, 0.2, 1] }}
+        className="relative z-10 text-center px-6 sm:px-8 max-w-4xl w-full"
       >
         {subtitle && (
-          <p className="font-script text-4xl md:text-5xl text-gold mb-4">
+          <motion.p 
+            className="font-script text-3xl sm:text-4xl md:text-5xl text-gold mb-4"
+            initial={!prefersReducedMotion ? { opacity: 0 } : {}}
+            animate={{ opacity: 1 }}
+            transition={{ delay: prefersReducedMotion ? 0 : 0.2, duration: prefersReducedMotion ? 0 : 0.6 }}
+          >
             {subtitle}
-          </p>
+          </motion.p>
         )}
-        <h1 className="font-serif text-6xl md:text-7xl text-charcoal mb-6 leading-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-charcoal mb-6 leading-tight">
           {title}
         </h1>
         {description && (
-          <p className="text-xl text-charcoal/70 font-light leading-relaxed max-w-2xl mx-auto">
+          <motion.p 
+            className="text-lg sm:text-xl text-charcoal/70 font-light leading-relaxed max-w-2xl mx-auto"
+            initial={!prefersReducedMotion ? { opacity: 0 } : {}}
+            animate={{ opacity: 1 }}
+            transition={{ delay: prefersReducedMotion ? 0 : 0.4, duration: prefersReducedMotion ? 0 : 0.6 }}
+          >
             {description}
-          </p>
+          </motion.p>
         )}
-        {children && <div className="mt-8">{children}</div>}
+        {children && (
+          <motion.div 
+            className="mt-8"
+            initial={!prefersReducedMotion ? { opacity: 0, y: 20 } : {}}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: prefersReducedMotion ? 0 : 0.6, duration: prefersReducedMotion ? 0 : 0.6 }}
+          >
+            {children}
+          </motion.div>
+        )}
       </motion.div>
     </section>
   );
